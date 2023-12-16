@@ -9,8 +9,9 @@
 #define RCTCalendarModule_h
 
 #import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
 
-@interface RCTCalendarModule : NSObject <RCTBridgeModule>
+@interface RCTCalendarModule : RCTEventEmitter <RCTBridgeModule>
 
 @end
 

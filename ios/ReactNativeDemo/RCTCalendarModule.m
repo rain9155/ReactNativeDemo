@@ -10,6 +10,9 @@
 #import <React/RCTLog.h>
 
 @implementation RCTCalendarModule
+{
+  bool hasListeners;
+}
 
 RCT_EXPORT_MODULE(CalendarModule)
 
@@ -42,6 +45,39 @@ RCT_EXPORT_METHOD(createCalendarEventWithPromise:(NSString *)name
   {
     reject(@"Create Event Error", [e reason], nil);
   }
+}
+
+RCT_EXPORT_METHOD(sendCalendarEventFromNative)
+{
+  RCTLogInfo(@"sendCalendarEventFromNative");
+  if (hasListeners)
+  {
+    NSString* eventName = @"CalendarEvent";
+    NSString* params = @"someValue";
+    [self sendEventWithName:eventName body:params];
+  }
+}
+
+// Return an array of supported event names.
+- (NSArray<NSString *> *)supportedEvents
+{
+  return @[@"CalendarEvent"];
+}
+
+
+// Will be called when this module's first listener is added.
+- (void)startObserving
+{
+  RCTLogInfo(@"startObserving");
+  hasListeners = YES;
+  // Set up any upstream listeners or background tasks as necessary
+}
+
+- (void)stopObserving
+{
+  RCTLogInfo(@"stopObserving");
+  hasListeners = NO;
+  // Remove upstream listeners, stop unnecessary background tasks
 }
 
 @end
