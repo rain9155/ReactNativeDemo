@@ -3,8 +3,12 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import {
   SafeAreaView,
   useColorScheme,
-  StatusBar
+  StatusBar,
+  PixelRatio,
+  Platform,
 } from 'react-native';
+import TextView from "../native_components/TextView";
+import { NativeEventHandler } from "../native_components/TextView";
 
 function NativeComponentScreen() : React.ReactElement {
   const isDarkMode = useColorScheme() === 'dark';
@@ -13,11 +17,41 @@ function NativeComponentScreen() : React.ReactElement {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const nativeEventHandler = Platform.select<NativeEventHandler>({
+    ios: {
+      onSelect: (event)=>{
+        console.log(`receive onSelect event, message = ${event.message}`);
+      }
+    },
+    android: {
+      onClick: (event)=>{
+        console.log(`receive onClick event, message = ${event.message}`);
+      }
+    }
+  });
+
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView 
+      style={[
+        backgroundStyle,
+        {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }
+      ]}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
+      />
+      <TextView
+        style={{
+          width: PixelRatio.getPixelSizeForLayoutSize(60),
+          height: PixelRatio.getPixelSizeForLayoutSize(20),
+        }}
+        text="Hello World"
+        textColor={isDarkMode ? '#ffffff' : '#000000'}
+        {...nativeEventHandler}
       />
     </SafeAreaView>
   );

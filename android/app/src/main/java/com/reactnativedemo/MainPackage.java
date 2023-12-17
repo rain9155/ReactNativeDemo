@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AppPackage implements ReactPackage {
+public class MainPackage implements ReactPackage {
 
     @NonNull
     @Override
@@ -23,7 +23,9 @@ public class AppPackage implements ReactPackage {
     @NonNull
     @Override
     public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactApplicationContext) {
-        return Collections.emptyList();
+        List<ViewManager> viewManagers = new ArrayList<>();
+        viewManagers.add(new TextViewManager(reactApplicationContext));
+        return viewManagers;
     }
 
 }

@@ -5,9 +5,15 @@
 //  Created by ByteDance on 2023/12/14.
 //
 
-#import "RCTCalendarModule.h"
+
 #import <Foundation/Foundation.h>
 #import <React/RCTLog.h>
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+
+@interface RCTCalendarModule : RCTEventEmitter <RCTBridgeModule>
+
+@end
 
 @implementation RCTCalendarModule
 {

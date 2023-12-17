@@ -58,12 +58,13 @@ function NativeModuleScreen() : React.ReactElement {
   };
 
   return (
-    <SafeAreaView style={[
-      backgroundStyle,
-      {
-        flex:1
-      }
-    ]}>
+    <SafeAreaView 
+      style={[
+        backgroundStyle,
+        {
+          flex:1
+        }
+      ]}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}

@@ -61,9 +61,11 @@ function HomeScreen({ navigation } : any): React.ReactElement {
   };
 
   return (
-    <SafeAreaView style={[
-      backgroundStyle, 
-      styles.container]}>
+    <SafeAreaView 
+      style={[
+        backgroundStyle, 
+        styles.container
+      ]}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
