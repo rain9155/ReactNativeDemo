@@ -1,0 +1,39 @@
+{
+  "name": "react-native-textview",
+  "version": "1.0.0",
+  "description": "TextView Component",
+  "author": "chenjianyu",
+  "homepage": "https://github.com/rain9155/ReactNativeDemo",
+  "license": "MIT",
+  "main": "js/index",
+  "react-native": "js/index",
+  "source": "js/index",
+  "files": [
+    "js",
+    "android",
+    "ios",
+    "react-native-calculator.podspec",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "keywords": [
+    "react-native", 
+    "ios",
+    "android"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "RNTextviewSpec",
+    "type": "components",
+    "jsSrcsDir": "js",
+    "android": {
+      "javaPackageName": "com.rntextview"
+    }
+  }
+}

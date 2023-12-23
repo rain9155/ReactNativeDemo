@@ -1,8 +1,8 @@
 //
 //  UIColor+HexColor.h
-//  ReactNativeDemo
+//  react-native-textview
 //
-//  Created by ByteDance on 2023/12/17.
+//  Created by ByteDance on 2023/12/24.
 //
 
 #ifndef UIColor_HexColor_h

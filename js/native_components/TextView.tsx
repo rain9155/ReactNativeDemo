@@ -1,21 +1,7 @@
 import React, { SyntheticEvent } from 'react';
-import { PropsWithChildren } from 'react';
-import { Platform, View, ViewProps, requireNativeComponent } from 'react-native';
+import Textview, { TextProps } from 'react-native-textview';
 
-type AndroidNativeEventHandler = {
-  onClick?: (event: any) => void; // only android
-};
-
-type IOSNativeEventHandler = {
-  onSelect?: (event: any) => void; // only ios
-};
-
-type TextProps = ViewProps & AndroidNativeEventHandler & IOSNativeEventHandler & { 
-    text: string,
-    textColor: string,
-}  
-
-const NativeTextView = requireNativeComponent<TextProps>('TextView');
+const NativeTextView = Textview;
 
 class TextView extends React.Component<TextProps> {
 

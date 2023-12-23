@@ -12,9 +12,6 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2BA7A8B52B2E685C00B88CD9 /* RCTTextViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA7A8B42B2E685C00B88CD9 /* RCTTextViewManager.m */; };
-		2BA7A8BA2B2E7C6C00B88CD9 /* UIColor+HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA7A8B92B2E7C6C00B88CD9 /* UIColor+HexColor.m */; };
-		2BA7A8BD2B2E94BE00B88CD9 /* RCTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA7A8BC2B2E94BE00B88CD9 /* RCTTextView.m */; };
 		7699B88040F8A987B510C191 /* libPods-ReactNativeDemo-ReactNativeDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-ReactNativeDemo-ReactNativeDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -40,11 +37,6 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeDemo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeDemo/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-ReactNativeDemo-ReactNativeDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeDemo-ReactNativeDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BA7A8B42B2E685C00B88CD9 /* RCTTextViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTTextViewManager.m; path = ReactNativeDemo/RCTTextViewManager.m; sourceTree = "<group>"; };
-		2BA7A8B62B2E7C1800B88CD9 /* UIColor+HexColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexColor.h"; path = "ReactNativeDemo/UIColor+HexColor.h"; sourceTree = "<group>"; };
-		2BA7A8B92B2E7C6C00B88CD9 /* UIColor+HexColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexColor.m"; path = "ReactNativeDemo/UIColor+HexColor.m"; sourceTree = "<group>"; };
-		2BA7A8BB2B2E94AC00B88CD9 /* RCTTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RCTTextView.h; path = ReactNativeDemo/RCTTextView.h; sourceTree = "<group>"; };
-		2BA7A8BC2B2E94BE00B88CD9 /* RCTTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTTextView.m; path = ReactNativeDemo/RCTTextView.m; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-ReactNativeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeDemo.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeDemo/Pods-ReactNativeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-ReactNativeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeDemo.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeDemo/Pods-ReactNativeDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-ReactNativeDemo-ReactNativeDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeDemo-ReactNativeDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeDemo-ReactNativeDemoTests/Pods-ReactNativeDemo-ReactNativeDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,11 +92,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				2BA7A8B42B2E685C00B88CD9 /* RCTTextViewManager.m */,
-				2BA7A8B62B2E7C1800B88CD9 /* UIColor+HexColor.h */,
-				2BA7A8B92B2E7C6C00B88CD9 /* UIColor+HexColor.m */,
-				2BA7A8BB2B2E94AC00B88CD9 /* RCTTextView.h */,
-				2BA7A8BC2B2E94BE00B88CD9 /* RCTTextView.m */,
 			);
 			name = ReactNativeDemo;
 			sourceTree = "<group>";
@@ -425,11 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA7A8BD2B2E94BE00B88CD9 /* RCTTextView.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
-				2BA7A8BA2B2E7C6C00B88CD9 /* UIColor+HexColor.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				2BA7A8B52B2E685C00B88CD9 /* RCTTextViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,16 +593,12 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_CFLAGS = "$(inherited)  ";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					" ",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -687,16 +667,12 @@
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_CFLAGS = "$(inherited)  ";
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					" ",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
