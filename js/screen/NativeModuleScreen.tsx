@@ -10,7 +10,6 @@ import {
   NativeEventEmitter
 } from 'react-native';
 
-
 function NativeModuleScreen() : React.ReactElement {
   const isDarkMode = useColorScheme() === 'dark';
 

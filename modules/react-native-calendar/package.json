@@ -1,0 +1,39 @@
+{
+  "name": "react-native-calendar",
+  "version": "1.0.0",
+  "description": "Create calendar event",
+  "author": "chenjianyu",
+  "homepage": "https://github.com/rain9155/ReactNativeDemo",
+  "license": "MIT",
+  "main": "js/index",
+  "react-native": "js/index",
+  "source": "js/index",
+  "files": [
+    "js",
+    "android",
+    "ios",
+    "react-native-calculator.podspec",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "keywords": [
+    "react-native", 
+    "ios",
+    "android"
+  ],
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "RNCalendarSpec",
+    "type": "modules",
+    "jsSrcsDir": "js",
+    "android": {
+      "javaPackageName": "com.rncalendar"
+    }
+  }
+}

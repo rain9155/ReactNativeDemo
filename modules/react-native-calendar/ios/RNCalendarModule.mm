@@ -1,33 +1,27 @@
 //
-//  RCTCalendarModule.m
-//  ReactNativeDemo
+//  RNCalendarModule.m
+//  react-native-calendar
 //
-//  Created by ByteDance on 2023/12/14.
+//  Created by ByteDance on 2023/12/24.
 //
 
-
+#import "RNCalendarModule.h"
 #import <Foundation/Foundation.h>
 #import <React/RCTLog.h>
-#import <React/RCTBridgeModule.h>
-#import <React/RCTEventEmitter.h>
 
-@interface RCTCalendarModule : RCTEventEmitter <RCTBridgeModule>
-
-@end
-
-@implementation RCTCalendarModule
+@implementation RNCalendarModule
 {
   bool hasListeners;
 }
 
-RCT_EXPORT_MODULE(CalendarModule)
+RCT_EXPORT_MODULE(RNCalendar)
 
-RCT_EXPORT_METHOD(createCalendarEvent:(NSString *)name 
+RCT_EXPORT_METHOD(createCalendarEvent:(NSString *)name
                   Location:(NSString *)location
                   Callback:(RCTResponseSenderBlock)callback)
 {
   RCTLogInfo(@"createCalendarEvent, name = %@, location = %@", name, location);
-  @try 
+  @try
   {
     callback(@[@"", @"eventId: 123456"]);
   }
@@ -85,5 +79,12 @@ RCT_EXPORT_METHOD(sendCalendarEventFromNative)
   hasListeners = NO;
   // Remove upstream listeners, stop unnecessary background tasks
 }
+
+#ifdef RCT_NEW_ARCH_ENABLED
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:(const facebook::react::ObjCTurboModule::InitParams &)params
+{
+    return std::make_shared<facebook::react::<NativeCalendarSpecJSI>>(params);
+}
+#endif
 
 @end
