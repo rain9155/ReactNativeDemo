@@ -1,13 +1,15 @@
 import { HostComponent, requireNativeComponent } from "react-native";
-import { TextProps as _TextProps } from "./TextviewNativeComponent";
+import { RNTextProps as TextProps, RNTextEvent as TextEvent } from "./RNTextviewNativeComponent";
 
 // @ts-expect-error
 const isTurboModuleEnabled = global.__turboModuleProxy != null;
 
-const Textview = isTurboModuleEnabled
-  ? require('./TextviewNativeComponent').default
+const RNTextview = isTurboModuleEnabled
+  ? require('./RNTextviewNativeComponent').default
   : requireNativeComponent('RNTextview');
 
-export type TextProps = _TextProps;
+export type RNTextEvent = TextEvent;
 
-export default Textview as HostComponent<TextProps>;
+export type RNTextProps = TextProps;
+
+export default RNTextview as HostComponent<TextProps>;

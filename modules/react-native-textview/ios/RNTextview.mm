@@ -9,6 +9,7 @@
 #import "RNTextview.h"
 #import <Foundation/Foundation.h>
 #import "RNTextviewImpl.h"
+#import "UIColor+HexColor.h"
 
 #import <react/renderer/components/RNTextviewSpec/ComponentDescriptors.h>
 #import <react/renderer/components/RNTextviewSpec/EventEmitters.h>
@@ -23,7 +24,8 @@ using namespace facebook::react;
 
 @end
 
-@implementation RNTextview {
+@implementation RNTextview 
+{
     RNTextviewImpl* _view;
 }
 
@@ -34,16 +36,16 @@ using namespace facebook::react;
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-  if (self = [super initWithFrame:frame]) {
-    static const auto defaultProps = std::make_shared<const RNTextviewProps>();
-    _props = defaultProps;
+    if (self = [super initWithFrame:frame])
+    {
+        NSLog(@"RNTextview, createView");
+        static const auto defaultProps = std::make_shared<const RNTextviewProps>();
+        _props = defaultProps;
+        _view = [[RNTextviewImpl alloc] init];
+        self.contentView = _view;
+    }
 
-    _view = [[RNTextview alloc] init];
-
-    self.contentView = _view;
-  }
-
-  return self;
+    return self;
 }
 
 - (void)updateProps:(Props::Shared const &)props oldProps:(Props::Shared const &)oldProps
@@ -51,18 +53,27 @@ using namespace facebook::react;
     const auto &oldViewProps = *std::static_pointer_cast<RNTextviewProps const>(_props);
     const auto &newViewProps = *std::static_pointer_cast<RNTextviewProps const>(props);
 
-    if (oldViewProps.textColor != newViewProps.textColor) {
-        _view.textColor = [UIColor colorWithHexString:newViewProps.textColor];
+    if(oldViewProps.text != newViewProps.text)
+    {
+        NSString* text = [NSString stringWithUTF8String:newViewProps.text.c_str()];
+        _view.text = text;
+        NSLog(@"RNTextview, setText, text = %@", text);
+    }
+    if (oldViewProps.textColor != newViewProps.textColor) 
+    {
+        NSString* textColor = [NSString stringWithUTF8String:newViewProps.textColor.c_str()];
+        _view.textColor = [UIColor colorWithHexString:textColor];
+        NSLog(@"RNTextview, setTextColor, textColor = %@", textColor);
     }
 
     [super updateProps:props oldProps:oldProps];
 }
 
+@end
+
 Class<RCTComponentViewProtocol> RNTextviewCls(void)
 {
     return RNTextview.class;
 }
-
-@end
 
 #endif /*RCT_NEW_ARCH_ENABLED*/

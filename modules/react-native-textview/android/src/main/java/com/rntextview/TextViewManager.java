@@ -17,7 +17,7 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 import java.util.Map;
 
 /**
- * TextViewManager support new/old arch
+ * TextViewManager support new/old arch, @ReactProp for backward compatibility old arch
  */
 public class TextViewManager extends TextViewManagerSpec<Textview> {
 

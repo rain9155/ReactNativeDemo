@@ -13,7 +13,7 @@
 
 @interface RNTextviewImpl : UITextView
 
-@property(nonatomic,copy) RCTBubblingEventBlock onSelect;
+@property(nonatomic,copy) RCTDirectEventBlock onSelect;
 
 @end
 

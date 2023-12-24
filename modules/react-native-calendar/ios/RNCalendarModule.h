@@ -19,7 +19,7 @@
 @end
 
 #ifdef RCT_NEW_ARCH_ENABLED
-@interface RNCalendarModule() <NativeCalendarSpec>
+@interface RNCalendarModule() <NativeRNCalendarSpec>
 
 @end
 #endif

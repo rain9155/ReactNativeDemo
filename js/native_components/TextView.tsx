@@ -1,7 +1,11 @@
-import React, { SyntheticEvent } from 'react';
-import Textview, { TextProps } from 'react-native-textview';
+import React from 'react';
+import { NativeSyntheticEvent } from 'react-native';
+import RNTextview, { RNTextProps, RNTextEvent } from 'react-native-textview';
+import { DirectEventHandler } from 'react-native/Libraries/Types/CodegenTypes';
 
-const NativeTextView = Textview;
+type TextEvent = RNTextEvent;
+type TextProps = RNTextProps;
+const NativeTextView = RNTextview;
 
 class TextView extends React.Component<TextProps> {
 
@@ -11,18 +15,18 @@ class TextView extends React.Component<TextProps> {
     this.onSelect = this.onSelect.bind(this);
   }
 
-  onClick(event: SyntheticEvent): void {
+  onClick(event: NativeSyntheticEvent<TextEvent>): void {
     if(!this.props.onClick){
       return
     }
-    this.props.onClick(event.nativeEvent);
+    this.props.onClick(event);
   }
 
-  onSelect(event: SyntheticEvent): void {
+  onSelect(event: NativeSyntheticEvent<TextEvent>): void {
     if(!this.props.onSelect){
       return
     }
-    this.props.onSelect(event.nativeEvent);
+    this.props.onSelect(event);
   }
 
   /**
@@ -52,6 +56,14 @@ class TextView extends React.Component<TextProps> {
   }
 }
 
-export type NativeEventHandler = AndroidNativeEventHandler | IOSNativeEventHandler;
+type AndroidNativeEventHandler = {
+  onClick?: DirectEventHandler<TextEvent>; // only android
+};
+
+type IOSNativeEventHandler = {
+  onSelect?: DirectEventHandler<TextEvent>; // only ios
+};
+
+export type TextEventHandler = AndroidNativeEventHandler | IOSNativeEventHandler;
 
 export default TextView;

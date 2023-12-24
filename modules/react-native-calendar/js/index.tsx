@@ -1,14 +1,14 @@
 import { NativeModules } from 'react-native';
-import { Spec } from './NativeCalendar';
+import { Spec } from './NativeRNCalendar';
 
 // @ts-expect-error
 const isTurboModuleEnabled = global.__turboModuleProxy != null;
 
-const CalendarModule = isTurboModuleEnabled
-  ? require('./NativeCalendar').default
+const RNCalendar = isTurboModuleEnabled
+  ? require('./NativeRNCalendar').default
   : NativeModules.RNCalendar;
 
-export default CalendarModule as Spec;
+export default RNCalendar as Spec;
 
 
 

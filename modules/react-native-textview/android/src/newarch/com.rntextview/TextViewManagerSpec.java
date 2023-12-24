@@ -1,18 +1,18 @@
-package com.textview;
+package com.rntextview;
 
 import android.view.View;
 import androidx.annotation.Nullable;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ViewManagerDelegate;
-import com.facebook.react.viewmanagers.TextViewManagerDelegate;
-import com.facebook.react.viewmanagers.TextViewManagerInterface;
+import com.facebook.react.viewmanagers.RNTextviewManagerDelegate;
+import com.facebook.react.viewmanagers.RNTextviewManagerInterface;
 
-public abstract class TextViewManagerSpec<T extends View> extends SimpleViewManager<T> implements TextViewManagerInterface<T> {
+public abstract class TextViewManagerSpec<T extends View> extends SimpleViewManager<T> implements RNTextviewManagerInterface<T> {
   
   private final ViewManagerDelegate<T> mDelegate;
 
   public TextViewManagerSpec() {
-    mDelegate = new TextViewManagerDelegate(this);
+    mDelegate = new RNTextviewManagerDelegate(this);
   }
 
   @Nullable

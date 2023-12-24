@@ -7,8 +7,7 @@ import {
   PixelRatio,
   Platform,
 } from 'react-native';
-import TextView from "../native_components/TextView";
-import { NativeEventHandler } from "../native_components/TextView";
+import TextView, { TextEventHandler } from "../native_components/TextView";
 
 function NativeComponentScreen() : React.ReactElement {
   const isDarkMode = useColorScheme() === 'dark';
@@ -17,15 +16,15 @@ function NativeComponentScreen() : React.ReactElement {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const nativeEventHandler = Platform.select<NativeEventHandler>({
+  const nativeEventHandler = Platform.select<TextEventHandler>({
     ios: {
       onSelect: (event)=>{
-        console.log(`receive onSelect event, message = ${event.message}`);
+        console.log(`receive onSelect event, message = ${event.nativeEvent.message}`);
       }
     },
     android: {
       onClick: (event)=>{
-        console.log(`receive onClick event, message = ${event.message}`);
+        console.log(`receive onClick event, message = ${event.nativeEvent.message}`);
       }
     }
   });
