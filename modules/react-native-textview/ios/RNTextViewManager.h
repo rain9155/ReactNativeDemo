@@ -9,7 +9,7 @@
 #define RNTextViewManager_h
 #import <React/RCTViewManager.h>
 
-@interface RNTextViewManager : RCTViewManager <UITextViewDelegate>
+@interface RNTextViewManager : RCTViewManager
 
 @end
 

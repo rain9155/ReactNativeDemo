@@ -11,7 +11,7 @@
 #import <UIKit/UITextView.h>
 #import <React/RCTViewManager.h>
 
-@interface RNTextviewImpl : UITextView
+@interface RNTextviewImpl : UITextView <UITextViewDelegate>
 
 @property(nonatomic,copy) RCTDirectEventBlock onSelect;
 

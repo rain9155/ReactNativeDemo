@@ -42,6 +42,16 @@ using namespace facebook::react;
         static const auto defaultProps = std::make_shared<const RNTextviewProps>();
         _props = defaultProps;
         _view = [[RNTextviewImpl alloc] init];
+        _view.onSelect = [self](NSDictionary *body) {
+            if(_eventEmitter)
+            {
+                auto eventEmitter = std::static_pointer_cast<RNTextviewEventEmitter const>(_eventEmitter);
+                RNTextviewEventEmitter::OnSelect onSelectData = {
+                    .message = [body[@"message"] UTF8String]
+                };
+                eventEmitter->onSelect(onSelectData);
+            }
+        };
         self.contentView = _view;
     }
 

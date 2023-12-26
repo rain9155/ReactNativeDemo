@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTLog.h>
 
+/**
+ * RNCalendarModule support new/old arch, RCT_EXPORT_METHOD for  backwards compatibility
+ */
 @implementation RNCalendarModule
 {
   bool hasListeners;
@@ -17,8 +20,8 @@
 RCT_EXPORT_MODULE(RNCalendar)
 
 RCT_EXPORT_METHOD(createCalendarEvent:(NSString *)name
-                  Location:(NSString *)location
-                  Callback:(RCTResponseSenderBlock)callback)
+                  location:(NSString *)location
+                  callback:(RCTResponseSenderBlock)callback)
 {
   RCTLogInfo(@"createCalendarEvent, name = %@, location = %@", name, location);
   @try
@@ -32,9 +35,9 @@ RCT_EXPORT_METHOD(createCalendarEvent:(NSString *)name
 }
 
 RCT_EXPORT_METHOD(createCalendarEventWithPromise:(NSString *)name
-                 Location:(NSString *)location
-                 Resolver:(RCTPromiseResolveBlock)resolve
-                 Rejecter:(RCTPromiseRejectBlock)reject)
+                 location:(NSString *)location
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  reject:(RCTPromiseRejectBlock)reject)
 {
   RCTLogInfo(@"createCalendarEventWithPromise, name = %@, location = %@", name, location);
   @try
@@ -57,6 +60,7 @@ RCT_EXPORT_METHOD(sendCalendarEventFromNative)
     [self sendEventWithName:eventName body:params];
   }
 }
+
 
 // Return an array of supported event names.
 - (NSArray<NSString *> *)supportedEvents
