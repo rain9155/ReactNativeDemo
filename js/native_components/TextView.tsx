@@ -49,7 +49,6 @@ class TextView extends React.Component<TextProps> {
     return (
       <NativeTextView 
         {...this.props}
-        onClick={this.onClick}
         onSelect={this.onSelect}
       />
     );

@@ -16,7 +16,9 @@ RCT_EXPORT_MODULE(RNTextview)
 
 RCT_EXPORT_VIEW_PROPERTY(text, NSString)
 
-RCT_EXPORT_VIEW_PROPERTY(onSelect, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onSelect, RCTDirectEventBlock)
+
+RCT_EXPORT_VIEW_PROPERTY(onClick, RCTBubblingEventBlock)
 
 RCT_CUSTOM_VIEW_PROPERTY(textColor, NSString, UITextView)
 {
