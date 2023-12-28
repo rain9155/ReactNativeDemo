@@ -10,7 +10,8 @@
     "log-android": "react-native log-android",
     "log-ios": "react-native log-ios",
     "react-devtools": "react-devtools",
-    "test": "jest"
+    "test": "jest",
+    "windows": "react-native run-windows"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.9",
@@ -21,7 +22,8 @@
     "react-native-safe-area-context": "^4.8.0",
     "react-native-screens": "^3.29.0",
     "react-native-textview": "file:./modules/react-native-textview",
-    "react-native-webview": "^13.6.3"
+    "react-native-webview": "^13.6.3",
+    "react-native-windows": "0.73.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -39,7 +41,8 @@
     "prettier": "^2.8.8",
     "react-devtools": "^5.0.0",
     "react-test-renderer": "18.2.0",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "metro-config": "^0.80.2"
   },
   "engines": {
     "node": ">=18"
